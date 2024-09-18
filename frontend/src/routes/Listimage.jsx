@@ -12,7 +12,7 @@ const Listimage = () => {
     const fetchImages = async () => {
       try {
         const token = localStorage.getItem("token");
-        const response = await axios.get("http://localhost:4000/my-images", {
+        const response = await axios.get("http://localhost:4001/my-images", {
           headers: {
             Authorization: `Bearer ${token}`,
           },
@@ -30,7 +30,7 @@ const Listimage = () => {
 
   const remove_images = async (id) => {
     try {
-      await fetch("http://localhost:4000/removeimage", {
+      await fetch("http://localhost:4001/removeimage", {
         method: "POST",
         headers: {
           Accept: "application/json",
@@ -57,6 +57,7 @@ const Listimage = () => {
         <p>Latitude</p>
         <p>Longitude</p>
         <p>Date</p>
+        <p>City</p> {/* Added City Column */}
         <p>Remove</p>
       </div>
       {images.length === 0 ? (
@@ -65,13 +66,14 @@ const Listimage = () => {
         images.map((image) => (
           <div key={image._id} className="list-images-item">
             <img
-              src={`http://localhost:4000/images/${image.filename}`}
+              src={`http://localhost:4001/images/${image.filename}`}
               alt={image.filename}
               className="image-thumbnail"
             />
             <p>{image.latitude}</p>
             <p>{image.longitude}</p>
             <p>{image.dateTime}</p>
+            <p>{image.city || "Unknown"}</p> {/* Display City */}
             <img
               onClick={() => remove_images(image._id)} // Use image._id for removal
               src={cross_icon}

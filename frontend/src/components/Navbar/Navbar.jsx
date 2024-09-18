@@ -24,8 +24,7 @@ const Navbar = () => {
           ) : (
             <Link to="/login">LOGIN</Link>
           )}
-          <Link to="/aboutus">ABOUT US</Link>
-          <Link to="/contact">CONTACT </Link>
+       
         </nav>
       </header>
     </div>
