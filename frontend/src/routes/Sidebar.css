@@ -1,42 +1,57 @@
+/* Sidebar container styling */
 .sidebar {
   margin-top: 88px;
   width: 250px;
   height: 100vh;
-  background-color: #f4f4f4;
+  background-color: #243642; /* Keeps the updated background color */
   padding: 20px;
-  box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1);
+  box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1); /* Lightened shadow for a cleaner look */
   position: fixed;
   top: 0;
   left: 0;
   overflow-y: auto;
   z-index: 101;
+  border: 1px solid #e6c200; /* Subtle border */
+  transition: transform 0.3s ease; /* Smooth transition for showing/hiding */
 }
 
+/* Sidebar items styling */
 .sidebar-item {
   display: flex;
   align-items: center;
-  padding: 10px;
-  margin-bottom: 10px;
-  background-color: #ffffff;
-  border-radius: 5px;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-  transition: background-color 0.3s ease, box-shadow 0.3s ease;
+  padding: 12px 15px;
+  margin-bottom: 12px;
+  background-color: #e8f6ee; /* Lightened background for better contrast */
+  border-radius: 8px; /* Slightly more rounded corners */
+  box-shadow: 0 2px 5px #e6c200; /* Softer shadow */
+  transition: background-color 0.3s ease, box-shadow 0.3s ease, transform 0.3s ease;
   cursor: pointer;
+  position: relative;
 }
 
+/* Image inside sidebar items */
 .sidebar-item img {
-  width: 24px;
-  height: 24px;
-  margin-right: 10px;
+  width: 28px; /* Slightly larger for clarity */
+  height: 28px;
+  margin-right: 12px; /* More space between image and text */
 }
 
+/* Text inside sidebar items */
 .sidebar-item p {
   margin: 0;
   font-size: 16px;
-  color: #333;
+  font-weight: 500; /* Slightly bolder text */
+  color: #243642; /* Consistent with sidebar color scheme */
 }
 
+/* Hover effect on sidebar items */
 .sidebar-item:hover {
-  background-color: #e0e0e0;
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+  background-color: #d8efe2; /* Lighter hover background for better feedback */
+  box-shadow: 0 8px 15px #e6c200; /* More prominent shadow on hover */
+  transform : translateY(-2px); /* Subtle lift effect on hover */
+}
+
+/* Hover animation for the entire sidebar */
+.sidebar:hover {
+  box-shadow: 2px 0 10px rgba(0, 0, 0, 0.2); /* Stronger shadow when hovered */
 }

@@ -3,7 +3,8 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  background: linear-gradient(180deg, #fde1ff 60%, #e1ffea22 90%);
+  background: linear-gradient(180deg, #243642 60%, #243642 90%);
+  color: #E2F1E7; /* Update the text color */
 }
 
 .home1 {
@@ -11,7 +12,8 @@
   flex-direction: row;
   align-items: center;
   gap: 20px;
-  margin-left: 10px;
+  margin-left: 160px;
+  color: #E2F1E7; /* Update the text color */
 }
 
 .img {

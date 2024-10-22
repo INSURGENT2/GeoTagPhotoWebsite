@@ -1,18 +1,20 @@
 import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
+import { useAuth } from "../context/AuthContext"; // Correct import path
 import "./Login.css";
 
 const Login = () => {
   const [isSignup, setIsSignup] = useState(false);
   const [formData, setFormData] = useState({
     usernameOrEmail: "",
-    username: "", // added for signup
-    email: "", // added for signup
+    username: "",
+    email: "",
     password: "",
-    confirmPassword: "", // added for signup
+    confirmPassword: "",
   });
   const [loading, setLoading] = useState(false);
   const navigate = useNavigate();
+  const { login } = useAuth(); // Get login function from context
 
   const handleChange = (e) => {
     const { name, value } = e.target;
@@ -26,7 +28,6 @@ const Login = () => {
     e.preventDefault();
     setLoading(true);
 
-    // Ensure password match for signup
     if (isSignup && formData.password !== formData.confirmPassword) {
       alert("Passwords do not match!");
       setLoading(false);
@@ -39,7 +40,6 @@ const Login = () => {
           username: formData.username,
           email: formData.email,
           password: formData.password,
-          confirmPassword: formData.confirmPassword,
         }
       : {
           usernameOrEmail: formData.usernameOrEmail,
@@ -62,8 +62,8 @@ const Login = () => {
       } else {
         alert(data.message);
         if (!isSignup) {
-          localStorage.setItem("token", data.token);
-          navigate("/sidebar");
+          login(data.token); // Use login function from context
+          navigate("/"); // Redirect to home page
         }
       }
     } catch (error) {

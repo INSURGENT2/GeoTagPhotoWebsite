@@ -1,13 +1,15 @@
 import React from "react";
 import { Link, useNavigate } from "react-router-dom";
+import { useAuth } from "../../context/AuthContext"; // Correct import path
 import "./Navbar.css";
 import logo from "../../assets/logo.png"; // Assuming your path is correct
 
 const Navbar = () => {
   const navigate = useNavigate();
+  const { logout } = useAuth(); // Get logout function from context
 
   const handleLogout = () => {
-    localStorage.removeItem("token");
+    logout(); // Call logout function
     navigate("/"); // Use navigate to redirect without reloading
   };
 
@@ -24,7 +26,6 @@ const Navbar = () => {
           ) : (
             <Link to="/login">LOGIN</Link>
           )}
-       
         </nav>
       </header>
     </div>

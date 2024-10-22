@@ -2,12 +2,14 @@
   margin-left: 550px; /* Ensure it fits next to the sidebar */
   margin-top: 200px; /* Adjust top margin */
   padding: 20px;
-  background-color: #f8f8f8;
+  background-color: #243642; /* Updated background color */
   border-radius: 10px;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
   max-width: 600px;
   width: calc(100% - 250px); /* Ensure it fits within the sidebar width */
   text-align: center;
+  color: #E2F1E7; /* Updated text color */
+  border: 2px solid #e6c200;
 }
 
 .upload-icon {
@@ -18,6 +20,7 @@
 h2 {
   margin-bottom: 15px;
   font-size: 18px; /* Adjust for a smaller screen */
+  color: #E2F1E7; /* Updated text color */
 }
 
 .upload-section {
@@ -32,6 +35,7 @@ label {
   display: block;
   margin-bottom: 10px;
   font-size: 14px; /* Adjust font size */
+  color: #E2F1E7; /* Updated label color */
 }
 
 input[type="file"] {
@@ -64,6 +68,7 @@ input[type="file"] {
   border-collapse: collapse;
   margin-top: 20px;
   font-size: 12px; /* Adjust table font size */
+  color: #E2F1E7; /* Updated table text color */
 }
 
 .image-table th,

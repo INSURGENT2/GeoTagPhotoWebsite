@@ -1,3 +1,4 @@
+// App.js
 import React from "react";
 import {
   BrowserRouter as Router,
@@ -5,6 +6,7 @@ import {
   Route,
   useLocation,
 } from "react-router-dom";
+import { AuthProvider } from "./context/AuthContext"; // Import the context
 import Navbar from "./components/Navbar/Navbar.jsx";
 import Sidebar from "./routes/Sidebar.jsx";
 import Home from "./routes/Home";
@@ -15,7 +17,7 @@ import Listimage from "./routes/Listimage.jsx";
 function App() {
   const location = useLocation();
 
-  // Conditionally show sidebar only for certain routes
+  // Conditionally show sidebar based on the path
   const showSidebar =
     location.pathname !== "/" && location.pathname !== "/login";
 
@@ -40,7 +42,9 @@ function App() {
 export default function AppWithRouter() {
   return (
     <Router>
-      <App />
+      <AuthProvider> {/* Wrap the App with AuthProvider */}
+        <App />
+      </AuthProvider>
     </Router>
   );
 }
